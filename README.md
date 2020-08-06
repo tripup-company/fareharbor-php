@@ -65,7 +65,7 @@ $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-User', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\DefaultApi(
+$apiInstance = new Swagger\Client\Api\BookingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -79,7 +79,7 @@ try {
     $result = $apiInstance->bookingTour($company_short_name, $availability_id, $body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->bookingTour: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BookingApi->bookingTour: ', $e->getMessage(), PHP_EOL;
 }
 
 // Configure API key authorization: apiApp
@@ -91,7 +91,7 @@ $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-User', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\DefaultApi(
+$apiInstance = new Swagger\Client\Api\BookingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -104,7 +104,7 @@ try {
     $result = $apiInstance->deleteBooking($company_short_name, $booking_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->deleteBooking: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BookingApi->deleteBooking: ', $e->getMessage(), PHP_EOL;
 }
 
 // Configure API key authorization: apiApp
@@ -116,7 +116,7 @@ $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-User', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\DefaultApi(
+$apiInstance = new Swagger\Client\Api\BookingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
     $result = $apiInstance->getBookingDetail($company_short_name, $booking_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getBookingDetail: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BookingApi->getBookingDetail: ', $e->getMessage(), PHP_EOL;
 }
 
 // Configure API key authorization: apiApp
@@ -141,132 +141,7 @@ $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-User', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-
-try {
-    $result = $apiInstance->getCompanies();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getCompanies: ', $e->getMessage(), PHP_EOL;
-}
-
-// Configure API key authorization: apiApp
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-App', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-App', 'Bearer');
-// Configure API key authorization: apiUser
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-User', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-User', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$company_short_name = "company_short_name_example"; // string | Company short name
-
-try {
-    $result = $apiInstance->getCompanyItems($company_short_name);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getCompanyItems: ', $e->getMessage(), PHP_EOL;
-}
-
-// Configure API key authorization: apiApp
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-App', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-App', 'Bearer');
-// Configure API key authorization: apiUser
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-User', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-User', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$company_short_name = "company_short_name_example"; // string | Company short name
-$availability_id = 56; // int | Availability id
-
-try {
-    $result = $apiInstance->getDetailAvailabilityTour($company_short_name, $availability_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getDetailAvailabilityTour: ', $e->getMessage(), PHP_EOL;
-}
-
-// Configure API key authorization: apiApp
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-App', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-App', 'Bearer');
-// Configure API key authorization: apiUser
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-User', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-User', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$company_short_name = "company_short_name_example"; // string | Company short name
-$tour_id = 56; // int | Tour id
-$start_date = "start_date_example"; // string | Date
-$end_date = "end_date_example"; // string | Date
-
-try {
-    $result = $apiInstance->getToursByDateRange($company_short_name, $tour_id, $start_date, $end_date);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getToursByDateRange: ', $e->getMessage(), PHP_EOL;
-}
-
-// Configure API key authorization: apiApp
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-App', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-App', 'Bearer');
-// Configure API key authorization: apiUser
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-User', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-User', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$company_short_name = "company_short_name_example"; // string | Company short name
-$tour_id = 56; // int | Tour id
-$date = "date_example"; // string | Date
-
-try {
-    $result = $apiInstance->getToursOnDate($company_short_name, $tour_id, $date);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->getToursOnDate: ', $e->getMessage(), PHP_EOL;
-}
-
-// Configure API key authorization: apiApp
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-App', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-App', 'Bearer');
-// Configure API key authorization: apiUser
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-User', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-User', 'Bearer');
-
-$apiInstance = new Swagger\Client\Api\DefaultApi(
+$apiInstance = new Swagger\Client\Api\BookingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -280,26 +155,26 @@ try {
     $result = $apiInstance->validateBookingTour($company_short_name, $availability_id, $body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->validateBookingTour: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BookingApi->validateBookingTour: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://demo.fareharbor.com/api/external/v1/*
+All URIs are relative to *https://virtserver.swaggerhub.com/tripup/FareHarbour/1.0.0*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**bookingTour**](docs/Api/DefaultApi.md#bookingtour) | **POST** /companies/{company-short-name}/availabilities/{availability-id}/bookings/ | Booking tour
-*DefaultApi* | [**deleteBooking**](docs/Api/DefaultApi.md#deletebooking) | **DELETE** /companies/{company-short-name}/bookings/{booking-id}/ | Cancel a booking
-*DefaultApi* | [**getBookingDetail**](docs/Api/DefaultApi.md#getbookingdetail) | **GET** /companies/{company-short-name}/bookings/{booking-id}/ | Get booking details
-*DefaultApi* | [**getCompanies**](docs/Api/DefaultApi.md#getcompanies) | **GET** /companies/ | Get companies
-*DefaultApi* | [**getCompanyItems**](docs/Api/DefaultApi.md#getcompanyitems) | **GET** /companies/{company-short-name}/items/ | Get company tours
-*DefaultApi* | [**getDetailAvailabilityTour**](docs/Api/DefaultApi.md#getdetailavailabilitytour) | **GET** /companies/{company-short-name}/availabilities/{availability-id}/ | Get availability tour
-*DefaultApi* | [**getToursByDateRange**](docs/Api/DefaultApi.md#gettoursbydaterange) | **GET** /companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date-range/{start-date}/{end-date}/ | Get company tours by date range
-*DefaultApi* | [**getToursOnDate**](docs/Api/DefaultApi.md#gettoursondate) | **GET** /companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date/{date}/ | Get tours for date
-*DefaultApi* | [**validateBookingTour**](docs/Api/DefaultApi.md#validatebookingtour) | **POST** /companies/{company-short-name}/availabilities/{availability-id}/bookings/validate/ | Validate bookings
+*BookingApi* | [**bookingTour**](docs/Api/BookingApi.md#bookingtour) | **POST** /companies/{company-short-name}/availabilities/{availability-id}/bookings/ | Booking tour
+*BookingApi* | [**deleteBooking**](docs/Api/BookingApi.md#deletebooking) | **DELETE** /companies/{company-short-name}/bookings/{booking-id}/ | Cancel a booking
+*BookingApi* | [**getBookingDetail**](docs/Api/BookingApi.md#getbookingdetail) | **GET** /companies/{company-short-name}/bookings/{booking-id}/ | Get booking details
+*BookingApi* | [**validateBookingTour**](docs/Api/BookingApi.md#validatebookingtour) | **POST** /companies/{company-short-name}/availabilities/{availability-id}/bookings/validate/ | Validate bookings
+*CompaniesApi* | [**getCompanies**](docs/Api/CompaniesApi.md#getcompanies) | **GET** /companies/ | Get companies
+*ToursApi* | [**getCompanyItems**](docs/Api/ToursApi.md#getcompanyitems) | **GET** /companies/{company-short-name}/items/ | Get company tours
+*ToursApi* | [**getDetailAvailabilityTour**](docs/Api/ToursApi.md#getdetailavailabilitytour) | **GET** /companies/{company-short-name}/availabilities/{availability-id}/ | Get availability tour
+*ToursApi* | [**getToursByDateRange**](docs/Api/ToursApi.md#gettoursbydaterange) | **GET** /companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date-range/{start-date}/{end-date}/ | Get company tours by date range
+*ToursApi* | [**getToursOnDate**](docs/Api/ToursApi.md#gettoursondate) | **GET** /companies/{company-short-name}/items/{tour-id}/minimal/availabilities/date/{date}/ | Get tours for date
 
 ## Documentation For Models
 

@@ -80,7 +80,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://demo.fareharbor.com/api/external/v1/';
+    protected $host = 'https://virtserver.swaggerhub.com/tripup/FareHarbour/1.0.0';
 
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default
