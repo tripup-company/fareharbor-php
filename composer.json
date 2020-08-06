@@ -1,6 +1,8 @@
 {
-    "name": "GIT_USER_ID/GIT_REPO_ID",
-    "description": "",
+    "name": "tripup-company/fareharbor-php",
+    "version": "0.0.2",
+    "type": "library",
+    "description": "fareharbor api client generaded by swagger",
     "keywords": [
         "swagger",
         "php",
