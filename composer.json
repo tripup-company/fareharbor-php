@@ -1,6 +1,6 @@
 {
     "name": "tripup-company/fareharbor-php",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "type": "library",
     "description": "fareharbor api client generaded by swagger",
     "keywords": [
