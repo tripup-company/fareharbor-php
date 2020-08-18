@@ -1,6 +1,6 @@
 <?php
 /**
- * TourImage
+ * AvailabilityCustomerTypeRates
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * TourImage Class Doc Comment
+ * AvailabilityCustomerTypeRates Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TourImage implements ModelInterface, ArrayAccess
+class AvailabilityCustomerTypeRates implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class TourImage implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TourImage';
+    protected static $swaggerModelName = 'AvailabilityCustomerTypeRates';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +56,12 @@ class TourImage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'image_cdn_url' => 'string',
-'pk' => 'int',
-'gallery' => 'string'    ];
+        'pk' => 'int',
+'total' => 'int',
+'capacity' => 'int',
+'customer_type' => '\Swagger\Client\Model\CustomerType',
+'customer_prototype' => '\Swagger\Client\Model\CustomerBookingPrototype',
+'custom_field_instances' => '\Swagger\Client\Model\CustomFieldInstance[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +69,12 @@ class TourImage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'image_cdn_url' => null,
-'pk' => null,
-'gallery' => null    ];
+        'pk' => null,
+'total' => null,
+'capacity' => null,
+'customer_type' => null,
+'customer_prototype' => null,
+'custom_field_instances' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +103,12 @@ class TourImage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'image_cdn_url' => 'image_cdn_url',
-'pk' => 'pk',
-'gallery' => 'gallery'    ];
+        'pk' => 'pk',
+'total' => 'total',
+'capacity' => 'capacity',
+'customer_type' => 'customer_type',
+'customer_prototype' => 'customer_prototype',
+'custom_field_instances' => 'custom_field_instances'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +116,12 @@ class TourImage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'image_cdn_url' => 'setImageCdnUrl',
-'pk' => 'setPk',
-'gallery' => 'setGallery'    ];
+        'pk' => 'setPk',
+'total' => 'setTotal',
+'capacity' => 'setCapacity',
+'customer_type' => 'setCustomerType',
+'customer_prototype' => 'setCustomerPrototype',
+'custom_field_instances' => 'setCustomFieldInstances'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +129,12 @@ class TourImage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'image_cdn_url' => 'getImageCdnUrl',
-'pk' => 'getPk',
-'gallery' => 'getGallery'    ];
+        'pk' => 'getPk',
+'total' => 'getTotal',
+'capacity' => 'getCapacity',
+'customer_type' => 'getCustomerType',
+'customer_prototype' => 'getCustomerPrototype',
+'custom_field_instances' => 'getCustomFieldInstances'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +194,12 @@ class TourImage implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['image_cdn_url'] = isset($data['image_cdn_url']) ? $data['image_cdn_url'] : null;
         $this->container['pk'] = isset($data['pk']) ? $data['pk'] : null;
-        $this->container['gallery'] = isset($data['gallery']) ? $data['gallery'] : null;
+        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
+        $this->container['capacity'] = isset($data['capacity']) ? $data['capacity'] : null;
+        $this->container['customer_type'] = isset($data['customer_type']) ? $data['customer_type'] : null;
+        $this->container['customer_prototype'] = isset($data['customer_prototype']) ? $data['customer_prototype'] : null;
+        $this->container['custom_field_instances'] = isset($data['custom_field_instances']) ? $data['custom_field_instances'] : null;
     }
 
     /**
@@ -209,30 +227,6 @@ class TourImage implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets image_cdn_url
-     *
-     * @return string
-     */
-    public function getImageCdnUrl()
-    {
-        return $this->container['image_cdn_url'];
-    }
-
-    /**
-     * Sets image_cdn_url
-     *
-     * @param string $image_cdn_url image_cdn_url
-     *
-     * @return $this
-     */
-    public function setImageCdnUrl($image_cdn_url)
-    {
-        $this->container['image_cdn_url'] = $image_cdn_url;
-
-        return $this;
-    }
-
-    /**
      * Gets pk
      *
      * @return int
@@ -257,25 +251,121 @@ class TourImage implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets gallery
+     * Gets total
      *
-     * @return string
+     * @return int
      */
-    public function getGallery()
+    public function getTotal()
     {
-        return $this->container['gallery'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets gallery
+     * Sets total
      *
-     * @param string $gallery gallery
+     * @param int $total total
      *
      * @return $this
      */
-    public function setGallery($gallery)
+    public function setTotal($total)
     {
-        $this->container['gallery'] = $gallery;
+        $this->container['total'] = $total;
+
+        return $this;
+    }
+
+    /**
+     * Gets capacity
+     *
+     * @return int
+     */
+    public function getCapacity()
+    {
+        return $this->container['capacity'];
+    }
+
+    /**
+     * Sets capacity
+     *
+     * @param int $capacity capacity
+     *
+     * @return $this
+     */
+    public function setCapacity($capacity)
+    {
+        $this->container['capacity'] = $capacity;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer_type
+     *
+     * @return \Swagger\Client\Model\CustomerType
+     */
+    public function getCustomerType()
+    {
+        return $this->container['customer_type'];
+    }
+
+    /**
+     * Sets customer_type
+     *
+     * @param \Swagger\Client\Model\CustomerType $customer_type customer_type
+     *
+     * @return $this
+     */
+    public function setCustomerType($customer_type)
+    {
+        $this->container['customer_type'] = $customer_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer_prototype
+     *
+     * @return \Swagger\Client\Model\CustomerBookingPrototype
+     */
+    public function getCustomerPrototype()
+    {
+        return $this->container['customer_prototype'];
+    }
+
+    /**
+     * Sets customer_prototype
+     *
+     * @param \Swagger\Client\Model\CustomerBookingPrototype $customer_prototype customer_prototype
+     *
+     * @return $this
+     */
+    public function setCustomerPrototype($customer_prototype)
+    {
+        $this->container['customer_prototype'] = $customer_prototype;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_field_instances
+     *
+     * @return \Swagger\Client\Model\CustomFieldInstance[]
+     */
+    public function getCustomFieldInstances()
+    {
+        return $this->container['custom_field_instances'];
+    }
+
+    /**
+     * Sets custom_field_instances
+     *
+     * @param \Swagger\Client\Model\CustomFieldInstance[] $custom_field_instances custom_field_instances
+     *
+     * @return $this
+     */
+    public function setCustomFieldInstances($custom_field_instances)
+    {
+        $this->container['custom_field_instances'] = $custom_field_instances;
 
         return $this;
     }

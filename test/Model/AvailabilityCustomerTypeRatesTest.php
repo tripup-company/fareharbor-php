@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomerTypeRateTest
+ * AvailabilityCustomerTypeRatesTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Swagger\Client;
 
 /**
- * CustomerTypeRateTest Class Doc Comment
+ * AvailabilityCustomerTypeRatesTest Class Doc Comment
  *
  * @category    Class
- * @description CustomerTypeRate
+ * @description AvailabilityCustomerTypeRates
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CustomerTypeRateTest extends \PHPUnit_Framework_TestCase
+class AvailabilityCustomerTypeRatesTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,16 +69,51 @@ class CustomerTypeRateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CustomerTypeRate"
+     * Test "AvailabilityCustomerTypeRates"
      */
-    public function testCustomerTypeRate()
+    public function testAvailabilityCustomerTypeRates()
     {
     }
 
     /**
-     * Test attribute "customer_type_rate"
+     * Test attribute "pk"
      */
-    public function testPropertyCustomerTypeRate()
+    public function testPropertyPk()
+    {
+    }
+
+    /**
+     * Test attribute "total"
+     */
+    public function testPropertyTotal()
+    {
+    }
+
+    /**
+     * Test attribute "capacity"
+     */
+    public function testPropertyCapacity()
+    {
+    }
+
+    /**
+     * Test attribute "customer_type"
+     */
+    public function testPropertyCustomerType()
+    {
+    }
+
+    /**
+     * Test attribute "customer_prototype"
+     */
+    public function testPropertyCustomerPrototype()
+    {
+    }
+
+    /**
+     * Test attribute "custom_field_instances"
+     */
+    public function testPropertyCustomFieldInstances()
     {
     }
 }

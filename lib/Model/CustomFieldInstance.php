@@ -1,6 +1,6 @@
 <?php
 /**
- * TourImage
+ * CustomFieldInstance
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * TourImage Class Doc Comment
+ * CustomFieldInstance Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TourImage implements ModelInterface, ArrayAccess
+class CustomFieldInstance implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class TourImage implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TourImage';
+    protected static $swaggerModelName = 'CustomFieldInstance';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +56,8 @@ class TourImage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'image_cdn_url' => 'string',
-'pk' => 'int',
-'gallery' => 'string'    ];
+        'pk' => 'int',
+'custom_field' => '\Swagger\Client\Model\CustomField'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +65,8 @@ class TourImage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'image_cdn_url' => null,
-'pk' => null,
-'gallery' => null    ];
+        'pk' => null,
+'custom_field' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +95,8 @@ class TourImage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'image_cdn_url' => 'image_cdn_url',
-'pk' => 'pk',
-'gallery' => 'gallery'    ];
+        'pk' => 'pk',
+'custom_field' => 'custom_field'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +104,8 @@ class TourImage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'image_cdn_url' => 'setImageCdnUrl',
-'pk' => 'setPk',
-'gallery' => 'setGallery'    ];
+        'pk' => 'setPk',
+'custom_field' => 'setCustomField'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +113,8 @@ class TourImage implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'image_cdn_url' => 'getImageCdnUrl',
-'pk' => 'getPk',
-'gallery' => 'getGallery'    ];
+        'pk' => 'getPk',
+'custom_field' => 'getCustomField'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +174,8 @@ class TourImage implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['image_cdn_url'] = isset($data['image_cdn_url']) ? $data['image_cdn_url'] : null;
         $this->container['pk'] = isset($data['pk']) ? $data['pk'] : null;
-        $this->container['gallery'] = isset($data['gallery']) ? $data['gallery'] : null;
+        $this->container['custom_field'] = isset($data['custom_field']) ? $data['custom_field'] : null;
     }
 
     /**
@@ -209,30 +203,6 @@ class TourImage implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets image_cdn_url
-     *
-     * @return string
-     */
-    public function getImageCdnUrl()
-    {
-        return $this->container['image_cdn_url'];
-    }
-
-    /**
-     * Sets image_cdn_url
-     *
-     * @param string $image_cdn_url image_cdn_url
-     *
-     * @return $this
-     */
-    public function setImageCdnUrl($image_cdn_url)
-    {
-        $this->container['image_cdn_url'] = $image_cdn_url;
-
-        return $this;
-    }
-
-    /**
      * Gets pk
      *
      * @return int
@@ -257,25 +227,25 @@ class TourImage implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets gallery
+     * Gets custom_field
      *
-     * @return string
+     * @return \Swagger\Client\Model\CustomField
      */
-    public function getGallery()
+    public function getCustomField()
     {
-        return $this->container['gallery'];
+        return $this->container['custom_field'];
     }
 
     /**
-     * Sets gallery
+     * Sets custom_field
      *
-     * @param string $gallery gallery
+     * @param \Swagger\Client\Model\CustomField $custom_field custom_field
      *
      * @return $this
      */
-    public function setGallery($gallery)
+    public function setCustomField($custom_field)
     {
-        $this->container['gallery'] = $gallery;
+        $this->container['custom_field'] = $custom_field;
 
         return $this;
     }
