@@ -56,7 +56,7 @@ class AvailabilitiesList implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'companies' => '\Swagger\Client\Model\Availability[]'    ];
+        'availabilities' => '\Swagger\Client\Model\Availability[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +64,7 @@ class AvailabilitiesList implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'companies' => null    ];
+        'availabilities' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +93,7 @@ class AvailabilitiesList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'companies' => 'companies'    ];
+        'availabilities' => 'availabilities'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +101,7 @@ class AvailabilitiesList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'companies' => 'setCompanies'    ];
+        'availabilities' => 'setAvailabilities'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +109,7 @@ class AvailabilitiesList implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'companies' => 'getCompanies'    ];
+        'availabilities' => 'getAvailabilities'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +169,7 @@ class AvailabilitiesList implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['companies'] = isset($data['companies']) ? $data['companies'] : null;
+        $this->container['availabilities'] = isset($data['availabilities']) ? $data['availabilities'] : null;
     }
 
     /**
@@ -197,25 +197,25 @@ class AvailabilitiesList implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets companies
+     * Gets availabilities
      *
      * @return \Swagger\Client\Model\Availability[]
      */
-    public function getCompanies()
+    public function getAvailabilities()
     {
-        return $this->container['companies'];
+        return $this->container['availabilities'];
     }
 
     /**
-     * Sets companies
+     * Sets availabilities
      *
-     * @param \Swagger\Client\Model\Availability[] $companies companies
+     * @param \Swagger\Client\Model\Availability[] $availabilities availabilities
      *
      * @return $this
      */
-    public function setCompanies($companies)
+    public function setAvailabilities($availabilities)
     {
-        $this->container['companies'] = $companies;
+        $this->container['availabilities'] = $availabilities;
 
         return $this;
     }

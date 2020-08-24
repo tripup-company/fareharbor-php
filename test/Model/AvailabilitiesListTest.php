@@ -76,9 +76,9 @@ class AvailabilitiesListTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "companies"
+     * Test attribute "availabilities"
      */
-    public function testPropertyCompanies()
+    public function testPropertyAvailabilities()
     {
     }
 }
