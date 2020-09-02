@@ -201,6 +201,7 @@ Class | Method | HTTP request | Description
  - [CustomerPrototype](docs/Model/CustomerPrototype.md)
  - [CustomerType](docs/Model/CustomerType.md)
  - [CustomerTypeRate](docs/Model/CustomerTypeRate.md)
+ - [CustomerTypeRateAvailability](docs/Model/CustomerTypeRateAvailability.md)
  - [CustomerTypeRateResponse](docs/Model/CustomerTypeRateResponse.md)
  - [Location](docs/Model/Location.md)
  - [Tour](docs/Model/Tour.md)

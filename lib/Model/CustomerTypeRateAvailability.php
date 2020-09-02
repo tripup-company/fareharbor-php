@@ -1,6 +1,6 @@
 <?php
 /**
- * Availability
+ * CustomerTypeRateAvailability
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * Availability Class Doc Comment
+ * CustomerTypeRateAvailability Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Availability implements ModelInterface, ArrayAccess
+class CustomerTypeRateAvailability implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class Availability implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Availability';
+    protected static $swaggerModelName = 'CustomerTypeRateAvailability';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,10 @@ class Availability implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'start_at' => 'string',
+        'customer_prototype' => '\Swagger\Client\Model\CustomerPrototype',
 'capacity' => 'int',
-'customer_type_rates' => '\Swagger\Client\Model\CustomerTypeRateAvailability[]',
 'minimum_party_size' => 'int',
-'end_at' => 'string',
+'customer_type' => '\Swagger\Client\Model\CustomerType',
 'maximum_party_size' => 'int',
 'pk' => 'int'    ];
 
@@ -70,11 +69,10 @@ class Availability implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'start_at' => null,
+        'customer_prototype' => null,
 'capacity' => null,
-'customer_type_rates' => null,
 'minimum_party_size' => null,
-'end_at' => null,
+'customer_type' => null,
 'maximum_party_size' => null,
 'pk' => null    ];
 
@@ -105,11 +103,10 @@ class Availability implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'start_at' => 'start_at',
+        'customer_prototype' => 'customer_prototype',
 'capacity' => 'capacity',
-'customer_type_rates' => 'customer_type_rates',
 'minimum_party_size' => 'minimum_party_size',
-'end_at' => 'end_at',
+'customer_type' => 'customer_type',
 'maximum_party_size' => 'maximum_party_size',
 'pk' => 'pk'    ];
 
@@ -119,11 +116,10 @@ class Availability implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'start_at' => 'setStartAt',
+        'customer_prototype' => 'setCustomerPrototype',
 'capacity' => 'setCapacity',
-'customer_type_rates' => 'setCustomerTypeRates',
 'minimum_party_size' => 'setMinimumPartySize',
-'end_at' => 'setEndAt',
+'customer_type' => 'setCustomerType',
 'maximum_party_size' => 'setMaximumPartySize',
 'pk' => 'setPk'    ];
 
@@ -133,11 +129,10 @@ class Availability implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'start_at' => 'getStartAt',
+        'customer_prototype' => 'getCustomerPrototype',
 'capacity' => 'getCapacity',
-'customer_type_rates' => 'getCustomerTypeRates',
 'minimum_party_size' => 'getMinimumPartySize',
-'end_at' => 'getEndAt',
+'customer_type' => 'getCustomerType',
 'maximum_party_size' => 'getMaximumPartySize',
 'pk' => 'getPk'    ];
 
@@ -199,11 +194,10 @@ class Availability implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['start_at'] = isset($data['start_at']) ? $data['start_at'] : null;
+        $this->container['customer_prototype'] = isset($data['customer_prototype']) ? $data['customer_prototype'] : null;
         $this->container['capacity'] = isset($data['capacity']) ? $data['capacity'] : null;
-        $this->container['customer_type_rates'] = isset($data['customer_type_rates']) ? $data['customer_type_rates'] : null;
         $this->container['minimum_party_size'] = isset($data['minimum_party_size']) ? $data['minimum_party_size'] : null;
-        $this->container['end_at'] = isset($data['end_at']) ? $data['end_at'] : null;
+        $this->container['customer_type'] = isset($data['customer_type']) ? $data['customer_type'] : null;
         $this->container['maximum_party_size'] = isset($data['maximum_party_size']) ? $data['maximum_party_size'] : null;
         $this->container['pk'] = isset($data['pk']) ? $data['pk'] : null;
     }
@@ -233,25 +227,25 @@ class Availability implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets start_at
+     * Gets customer_prototype
      *
-     * @return string
+     * @return \Swagger\Client\Model\CustomerPrototype
      */
-    public function getStartAt()
+    public function getCustomerPrototype()
     {
-        return $this->container['start_at'];
+        return $this->container['customer_prototype'];
     }
 
     /**
-     * Sets start_at
+     * Sets customer_prototype
      *
-     * @param string $start_at start_at
+     * @param \Swagger\Client\Model\CustomerPrototype $customer_prototype customer_prototype
      *
      * @return $this
      */
-    public function setStartAt($start_at)
+    public function setCustomerPrototype($customer_prototype)
     {
-        $this->container['start_at'] = $start_at;
+        $this->container['customer_prototype'] = $customer_prototype;
 
         return $this;
     }
@@ -281,30 +275,6 @@ class Availability implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets customer_type_rates
-     *
-     * @return \Swagger\Client\Model\CustomerTypeRateAvailability[]
-     */
-    public function getCustomerTypeRates()
-    {
-        return $this->container['customer_type_rates'];
-    }
-
-    /**
-     * Sets customer_type_rates
-     *
-     * @param \Swagger\Client\Model\CustomerTypeRateAvailability[] $customer_type_rates customer_type_rates
-     *
-     * @return $this
-     */
-    public function setCustomerTypeRates($customer_type_rates)
-    {
-        $this->container['customer_type_rates'] = $customer_type_rates;
-
-        return $this;
-    }
-
-    /**
      * Gets minimum_party_size
      *
      * @return int
@@ -329,25 +299,25 @@ class Availability implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets end_at
+     * Gets customer_type
      *
-     * @return string
+     * @return \Swagger\Client\Model\CustomerType
      */
-    public function getEndAt()
+    public function getCustomerType()
     {
-        return $this->container['end_at'];
+        return $this->container['customer_type'];
     }
 
     /**
-     * Sets end_at
+     * Sets customer_type
      *
-     * @param string $end_at end_at
+     * @param \Swagger\Client\Model\CustomerType $customer_type customer_type
      *
      * @return $this
      */
-    public function setEndAt($end_at)
+    public function setCustomerType($customer_type)
     {
-        $this->container['end_at'] = $end_at;
+        $this->container['customer_type'] = $customer_type;
 
         return $this;
     }

@@ -395,7 +395,7 @@ class BookingApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\AvailabilitiesList
+     * @return \Swagger\Client\Model\BookingResponse
      */
     public function deleteBooking($company_short_name, $booking_id)
     {
@@ -413,11 +413,11 @@ class BookingApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\AvailabilitiesList, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\BookingResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteBookingWithHttpInfo($company_short_name, $booking_id)
     {
-        $returnType = '\Swagger\Client\Model\AvailabilitiesList';
+        $returnType = '\Swagger\Client\Model\BookingResponse';
         $request = $this->deleteBookingRequest($company_short_name, $booking_id);
 
         try {
@@ -469,7 +469,7 @@ class BookingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\AvailabilitiesList',
+                        '\Swagger\Client\Model\BookingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -513,7 +513,7 @@ class BookingApi
      */
     public function deleteBookingAsyncWithHttpInfo($company_short_name, $booking_id)
     {
-        $returnType = '\Swagger\Client\Model\AvailabilitiesList';
+        $returnType = '\Swagger\Client\Model\BookingResponse';
         $request = $this->deleteBookingRequest($company_short_name, $booking_id);
 
         return $this->client
@@ -686,7 +686,7 @@ class BookingApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\AvailabilitiesList
+     * @return \Swagger\Client\Model\BookingResponse
      */
     public function getBookingDetail($company_short_name, $booking_id)
     {
@@ -704,11 +704,11 @@ class BookingApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\AvailabilitiesList, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\BookingResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBookingDetailWithHttpInfo($company_short_name, $booking_id)
     {
-        $returnType = '\Swagger\Client\Model\AvailabilitiesList';
+        $returnType = '\Swagger\Client\Model\BookingResponse';
         $request = $this->getBookingDetailRequest($company_short_name, $booking_id);
 
         try {
@@ -760,7 +760,7 @@ class BookingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\AvailabilitiesList',
+                        '\Swagger\Client\Model\BookingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -804,7 +804,7 @@ class BookingApi
      */
     public function getBookingDetailAsyncWithHttpInfo($company_short_name, $booking_id)
     {
-        $returnType = '\Swagger\Client\Model\AvailabilitiesList';
+        $returnType = '\Swagger\Client\Model\BookingResponse';
         $request = $this->getBookingDetailRequest($company_short_name, $booking_id);
 
         return $this->client
