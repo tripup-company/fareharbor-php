@@ -101,6 +101,16 @@ class BookingApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for noteBooking
+     *
+     * Update the booking note.
+     *
+     */
+    public function testNoteBooking()
+    {
+    }
+
+    /**
      * Test case for validateBookingTour
      *
      * Validate bookings.

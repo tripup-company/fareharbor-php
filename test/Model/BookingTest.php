@@ -76,9 +76,9 @@ class BookingTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "rebooking"
+     * Test attribute "note"
      */
-    public function testPropertyRebooking()
+    public function testPropertyNote()
     {
     }
 
@@ -86,6 +86,13 @@ class BookingTest extends \PHPUnit_Framework_TestCase
      * Test attribute "voucher_number"
      */
     public function testPropertyVoucherNumber()
+    {
+    }
+
+    /**
+     * Test attribute "rebooking"
+     */
+    public function testPropertyRebooking()
     {
     }
 

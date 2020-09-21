@@ -148,6 +148,32 @@ $apiInstance = new Swagger\Client\Api\BookingApi(
     $config
 );
 $company_short_name = "company_short_name_example"; // string | Company short name
+$booking_id = "booking_id_example"; // string | Booking id
+$body = new \Swagger\Client\Model\Note(); // \Swagger\Client\Model\Note | 
+
+try {
+    $result = $apiInstance->noteBooking($company_short_name, $booking_id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling BookingApi->noteBooking: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: apiApp
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-App', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-App', 'Bearer');
+// Configure API key authorization: apiUser
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-FareHarbor-API-User', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-FareHarbor-API-User', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\BookingApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_short_name = "company_short_name_example"; // string | Company short name
 $availability_id = 56; // int | Availability id
 $body = new \Swagger\Client\Model\Booking(); // \Swagger\Client\Model\Booking | 
 
@@ -169,6 +195,7 @@ Class | Method | HTTP request | Description
 *BookingApi* | [**bookingTour**](docs/Api/BookingApi.md#bookingtour) | **POST** /companies/{company-short-name}/availabilities/{availability-id}/bookings/ | Booking tour
 *BookingApi* | [**deleteBooking**](docs/Api/BookingApi.md#deletebooking) | **DELETE** /companies/{company-short-name}/bookings/{booking-id}/ | Cancel a booking
 *BookingApi* | [**getBookingDetail**](docs/Api/BookingApi.md#getbookingdetail) | **GET** /companies/{company-short-name}/bookings/{booking-id}/ | Get booking details
+*BookingApi* | [**noteBooking**](docs/Api/BookingApi.md#notebooking) | **PUT** /companies/{company-short-name}/bookings/{booking-id}/note/ | Update the booking note
 *BookingApi* | [**validateBookingTour**](docs/Api/BookingApi.md#validatebookingtour) | **POST** /companies/{company-short-name}/availabilities/{availability-id}/bookings/validate/ | Validate bookings
 *CompaniesApi* | [**getCompanies**](docs/Api/CompaniesApi.md#getcompanies) | **GET** /companies/ | Get companies
 *ToursApi* | [**getCompanyItems**](docs/Api/ToursApi.md#getcompanyitems) | **GET** /companies/{company-short-name}/items/ | Get company tours
@@ -204,6 +231,7 @@ Class | Method | HTTP request | Description
  - [CustomerTypeRateAvailability](docs/Model/CustomerTypeRateAvailability.md)
  - [CustomerTypeRateResponse](docs/Model/CustomerTypeRateResponse.md)
  - [Location](docs/Model/Location.md)
+ - [Note](docs/Model/Note.md)
  - [Tour](docs/Model/Tour.md)
  - [TourImage](docs/Model/TourImage.md)
  - [ToursList](docs/Model/ToursList.md)

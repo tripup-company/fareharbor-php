@@ -968,6 +968,305 @@ class BookingApi
     }
 
     /**
+     * Operation noteBooking
+     *
+     * Update the booking note
+     *
+     * @param  string $company_short_name Company short name (required)
+     * @param  string $booking_id Booking id (required)
+     * @param  \Swagger\Client\Model\Note $body body (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\BookingResponse
+     */
+    public function noteBooking($company_short_name, $booking_id, $body = null)
+    {
+        list($response) = $this->noteBookingWithHttpInfo($company_short_name, $booking_id, $body);
+        return $response;
+    }
+
+    /**
+     * Operation noteBookingWithHttpInfo
+     *
+     * Update the booking note
+     *
+     * @param  string $company_short_name Company short name (required)
+     * @param  string $booking_id Booking id (required)
+     * @param  \Swagger\Client\Model\Note $body (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\BookingResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function noteBookingWithHttpInfo($company_short_name, $booking_id, $body = null)
+    {
+        $returnType = '\Swagger\Client\Model\BookingResponse';
+        $request = $this->noteBookingRequest($company_short_name, $booking_id, $body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\BookingResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation noteBookingAsync
+     *
+     * Update the booking note
+     *
+     * @param  string $company_short_name Company short name (required)
+     * @param  string $booking_id Booking id (required)
+     * @param  \Swagger\Client\Model\Note $body (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function noteBookingAsync($company_short_name, $booking_id, $body = null)
+    {
+        return $this->noteBookingAsyncWithHttpInfo($company_short_name, $booking_id, $body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation noteBookingAsyncWithHttpInfo
+     *
+     * Update the booking note
+     *
+     * @param  string $company_short_name Company short name (required)
+     * @param  string $booking_id Booking id (required)
+     * @param  \Swagger\Client\Model\Note $body (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function noteBookingAsyncWithHttpInfo($company_short_name, $booking_id, $body = null)
+    {
+        $returnType = '\Swagger\Client\Model\BookingResponse';
+        $request = $this->noteBookingRequest($company_short_name, $booking_id, $body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'noteBooking'
+     *
+     * @param  string $company_short_name Company short name (required)
+     * @param  string $booking_id Booking id (required)
+     * @param  \Swagger\Client\Model\Note $body (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function noteBookingRequest($company_short_name, $booking_id, $body = null)
+    {
+        // verify the required parameter 'company_short_name' is set
+        if ($company_short_name === null || (is_array($company_short_name) && count($company_short_name) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $company_short_name when calling noteBooking'
+            );
+        }
+        // verify the required parameter 'booking_id' is set
+        if ($booking_id === null || (is_array($booking_id) && count($booking_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $booking_id when calling noteBooking'
+            );
+        }
+
+        $resourcePath = '/companies/{company-short-name}/bookings/{booking-id}/note/';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($company_short_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'company-short-name' . '}',
+                ObjectSerializer::toPathValue($company_short_name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($booking_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'booking-id' . '}',
+                ObjectSerializer::toPathValue($booking_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-FareHarbor-API-App');
+        if ($apiKey !== null) {
+            $headers['X-FareHarbor-API-App'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('X-FareHarbor-API-User');
+        if ($apiKey !== null) {
+            $headers['X-FareHarbor-API-User'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation validateBookingTour
      *
      * Validate bookings

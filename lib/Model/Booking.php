@@ -56,8 +56,9 @@ class Booking implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'rebooking' => 'string',
+        'note' => 'string',
 'voucher_number' => 'string',
+'rebooking' => 'string',
 'contact' => '\Swagger\Client\Model\Contact',
 'customers' => '\Swagger\Client\Model\CustomerTypeRate[]'    ];
 
@@ -67,8 +68,9 @@ class Booking implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'rebooking' => null,
+        'note' => null,
 'voucher_number' => null,
+'rebooking' => null,
 'contact' => null,
 'customers' => null    ];
 
@@ -99,8 +101,9 @@ class Booking implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'rebooking' => 'rebooking',
+        'note' => 'note',
 'voucher_number' => 'voucher_number',
+'rebooking' => 'rebooking',
 'contact' => 'contact',
 'customers' => 'customers'    ];
 
@@ -110,8 +113,9 @@ class Booking implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'rebooking' => 'setRebooking',
+        'note' => 'setNote',
 'voucher_number' => 'setVoucherNumber',
+'rebooking' => 'setRebooking',
 'contact' => 'setContact',
 'customers' => 'setCustomers'    ];
 
@@ -121,8 +125,9 @@ class Booking implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'rebooking' => 'getRebooking',
+        'note' => 'getNote',
 'voucher_number' => 'getVoucherNumber',
+'rebooking' => 'getRebooking',
 'contact' => 'getContact',
 'customers' => 'getCustomers'    ];
 
@@ -184,8 +189,9 @@ class Booking implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['rebooking'] = isset($data['rebooking']) ? $data['rebooking'] : null;
+        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
         $this->container['voucher_number'] = isset($data['voucher_number']) ? $data['voucher_number'] : null;
+        $this->container['rebooking'] = isset($data['rebooking']) ? $data['rebooking'] : null;
         $this->container['contact'] = isset($data['contact']) ? $data['contact'] : null;
         $this->container['customers'] = isset($data['customers']) ? $data['customers'] : null;
     }
@@ -215,25 +221,25 @@ class Booking implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets rebooking
+     * Gets note
      *
      * @return string
      */
-    public function getRebooking()
+    public function getNote()
     {
-        return $this->container['rebooking'];
+        return $this->container['note'];
     }
 
     /**
-     * Sets rebooking
+     * Sets note
      *
-     * @param string $rebooking rebooking
+     * @param string $note note
      *
      * @return $this
      */
-    public function setRebooking($rebooking)
+    public function setNote($note)
     {
-        $this->container['rebooking'] = $rebooking;
+        $this->container['note'] = $note;
 
         return $this;
     }
@@ -258,6 +264,30 @@ class Booking implements ModelInterface, ArrayAccess
     public function setVoucherNumber($voucher_number)
     {
         $this->container['voucher_number'] = $voucher_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets rebooking
+     *
+     * @return string
+     */
+    public function getRebooking()
+    {
+        return $this->container['rebooking'];
+    }
+
+    /**
+     * Sets rebooking
+     *
+     * @param string $rebooking rebooking
+     *
+     * @return $this
+     */
+    public function setRebooking($rebooking)
+    {
+        $this->container['rebooking'] = $rebooking;
 
         return $this;
     }
