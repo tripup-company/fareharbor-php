@@ -56,9 +56,24 @@ class BookingResponseObject implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'pk' => 'int',
+        'voucher_number' => 'string',
+'rebooked_to' => 'string',
+'rebooked_from' => 'string',
+'receipt_subtotal' => 'int',
+'receipt_total_display' => 'string',
+'note' => 'string',
+'note_safe_html' => 'string',
+'agent' => 'string',
+'pk' => 'int',
 'uuid' => 'string',
 'status' => 'string',
+'external_id' => 'string',
+'confirmation_url' => 'string',
+'dashboard_url' => 'string',
+'customer_count' => 'int',
+'invoice_price_display' => 'string',
+'display_id' => 'string',
+'pickup' => 'string',
 'availability' => '\Swagger\Client\Model\BookingResponseAvailability',
 'contact' => '\Swagger\Client\Model\Contact',
 'customers' => '\Swagger\Client\Model\Customer[]',
@@ -71,9 +86,24 @@ class BookingResponseObject implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'pk' => null,
+        'voucher_number' => null,
+'rebooked_to' => null,
+'rebooked_from' => null,
+'receipt_subtotal' => null,
+'receipt_total_display' => null,
+'note' => null,
+'note_safe_html' => null,
+'agent' => null,
+'pk' => null,
 'uuid' => null,
 'status' => null,
+'external_id' => null,
+'confirmation_url' => null,
+'dashboard_url' => null,
+'customer_count' => null,
+'invoice_price_display' => null,
+'display_id' => null,
+'pickup' => null,
 'availability' => null,
 'contact' => null,
 'customers' => null,
@@ -107,9 +137,24 @@ class BookingResponseObject implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'pk' => 'pk',
+        'voucher_number' => 'voucher_number',
+'rebooked_to' => 'rebooked_to',
+'rebooked_from' => 'rebooked_from',
+'receipt_subtotal' => 'receipt_subtotal',
+'receipt_total_display' => 'receipt_total_display',
+'note' => 'note',
+'note_safe_html' => 'note_safe_html',
+'agent' => 'agent',
+'pk' => 'pk',
 'uuid' => 'uuid',
 'status' => 'status',
+'external_id' => 'external_id',
+'confirmation_url' => 'confirmation_url',
+'dashboard_url' => 'dashboard_url',
+'customer_count' => 'customer_count',
+'invoice_price_display' => 'invoice_price_display',
+'display_id' => 'display_id',
+'pickup' => 'pickup',
 'availability' => 'availability',
 'contact' => 'contact',
 'customers' => 'customers',
@@ -122,9 +167,24 @@ class BookingResponseObject implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'pk' => 'setPk',
+        'voucher_number' => 'setVoucherNumber',
+'rebooked_to' => 'setRebookedTo',
+'rebooked_from' => 'setRebookedFrom',
+'receipt_subtotal' => 'setReceiptSubtotal',
+'receipt_total_display' => 'setReceiptTotalDisplay',
+'note' => 'setNote',
+'note_safe_html' => 'setNoteSafeHtml',
+'agent' => 'setAgent',
+'pk' => 'setPk',
 'uuid' => 'setUuid',
 'status' => 'setStatus',
+'external_id' => 'setExternalId',
+'confirmation_url' => 'setConfirmationUrl',
+'dashboard_url' => 'setDashboardUrl',
+'customer_count' => 'setCustomerCount',
+'invoice_price_display' => 'setInvoicePriceDisplay',
+'display_id' => 'setDisplayId',
+'pickup' => 'setPickup',
 'availability' => 'setAvailability',
 'contact' => 'setContact',
 'customers' => 'setCustomers',
@@ -137,9 +197,24 @@ class BookingResponseObject implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'pk' => 'getPk',
+        'voucher_number' => 'getVoucherNumber',
+'rebooked_to' => 'getRebookedTo',
+'rebooked_from' => 'getRebookedFrom',
+'receipt_subtotal' => 'getReceiptSubtotal',
+'receipt_total_display' => 'getReceiptTotalDisplay',
+'note' => 'getNote',
+'note_safe_html' => 'getNoteSafeHtml',
+'agent' => 'getAgent',
+'pk' => 'getPk',
 'uuid' => 'getUuid',
 'status' => 'getStatus',
+'external_id' => 'getExternalId',
+'confirmation_url' => 'getConfirmationUrl',
+'dashboard_url' => 'getDashboardUrl',
+'customer_count' => 'getCustomerCount',
+'invoice_price_display' => 'getInvoicePriceDisplay',
+'display_id' => 'getDisplayId',
+'pickup' => 'getPickup',
 'availability' => 'getAvailability',
 'contact' => 'getContact',
 'customers' => 'getCustomers',
@@ -204,9 +279,24 @@ class BookingResponseObject implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['voucher_number'] = isset($data['voucher_number']) ? $data['voucher_number'] : null;
+        $this->container['rebooked_to'] = isset($data['rebooked_to']) ? $data['rebooked_to'] : null;
+        $this->container['rebooked_from'] = isset($data['rebooked_from']) ? $data['rebooked_from'] : null;
+        $this->container['receipt_subtotal'] = isset($data['receipt_subtotal']) ? $data['receipt_subtotal'] : null;
+        $this->container['receipt_total_display'] = isset($data['receipt_total_display']) ? $data['receipt_total_display'] : null;
+        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
+        $this->container['note_safe_html'] = isset($data['note_safe_html']) ? $data['note_safe_html'] : null;
+        $this->container['agent'] = isset($data['agent']) ? $data['agent'] : null;
         $this->container['pk'] = isset($data['pk']) ? $data['pk'] : null;
         $this->container['uuid'] = isset($data['uuid']) ? $data['uuid'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['external_id'] = isset($data['external_id']) ? $data['external_id'] : null;
+        $this->container['confirmation_url'] = isset($data['confirmation_url']) ? $data['confirmation_url'] : null;
+        $this->container['dashboard_url'] = isset($data['dashboard_url']) ? $data['dashboard_url'] : null;
+        $this->container['customer_count'] = isset($data['customer_count']) ? $data['customer_count'] : null;
+        $this->container['invoice_price_display'] = isset($data['invoice_price_display']) ? $data['invoice_price_display'] : null;
+        $this->container['display_id'] = isset($data['display_id']) ? $data['display_id'] : null;
+        $this->container['pickup'] = isset($data['pickup']) ? $data['pickup'] : null;
         $this->container['availability'] = isset($data['availability']) ? $data['availability'] : null;
         $this->container['contact'] = isset($data['contact']) ? $data['contact'] : null;
         $this->container['customers'] = isset($data['customers']) ? $data['customers'] : null;
@@ -237,6 +327,198 @@ class BookingResponseObject implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets voucher_number
+     *
+     * @return string
+     */
+    public function getVoucherNumber()
+    {
+        return $this->container['voucher_number'];
+    }
+
+    /**
+     * Sets voucher_number
+     *
+     * @param string $voucher_number voucher_number
+     *
+     * @return $this
+     */
+    public function setVoucherNumber($voucher_number)
+    {
+        $this->container['voucher_number'] = $voucher_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets rebooked_to
+     *
+     * @return string
+     */
+    public function getRebookedTo()
+    {
+        return $this->container['rebooked_to'];
+    }
+
+    /**
+     * Sets rebooked_to
+     *
+     * @param string $rebooked_to rebooked_to
+     *
+     * @return $this
+     */
+    public function setRebookedTo($rebooked_to)
+    {
+        $this->container['rebooked_to'] = $rebooked_to;
+
+        return $this;
+    }
+
+    /**
+     * Gets rebooked_from
+     *
+     * @return string
+     */
+    public function getRebookedFrom()
+    {
+        return $this->container['rebooked_from'];
+    }
+
+    /**
+     * Sets rebooked_from
+     *
+     * @param string $rebooked_from rebooked_from
+     *
+     * @return $this
+     */
+    public function setRebookedFrom($rebooked_from)
+    {
+        $this->container['rebooked_from'] = $rebooked_from;
+
+        return $this;
+    }
+
+    /**
+     * Gets receipt_subtotal
+     *
+     * @return int
+     */
+    public function getReceiptSubtotal()
+    {
+        return $this->container['receipt_subtotal'];
+    }
+
+    /**
+     * Sets receipt_subtotal
+     *
+     * @param int $receipt_subtotal receipt_subtotal
+     *
+     * @return $this
+     */
+    public function setReceiptSubtotal($receipt_subtotal)
+    {
+        $this->container['receipt_subtotal'] = $receipt_subtotal;
+
+        return $this;
+    }
+
+    /**
+     * Gets receipt_total_display
+     *
+     * @return string
+     */
+    public function getReceiptTotalDisplay()
+    {
+        return $this->container['receipt_total_display'];
+    }
+
+    /**
+     * Sets receipt_total_display
+     *
+     * @param string $receipt_total_display receipt_total_display
+     *
+     * @return $this
+     */
+    public function setReceiptTotalDisplay($receipt_total_display)
+    {
+        $this->container['receipt_total_display'] = $receipt_total_display;
+
+        return $this;
+    }
+
+    /**
+     * Gets note
+     *
+     * @return string
+     */
+    public function getNote()
+    {
+        return $this->container['note'];
+    }
+
+    /**
+     * Sets note
+     *
+     * @param string $note note
+     *
+     * @return $this
+     */
+    public function setNote($note)
+    {
+        $this->container['note'] = $note;
+
+        return $this;
+    }
+
+    /**
+     * Gets note_safe_html
+     *
+     * @return string
+     */
+    public function getNoteSafeHtml()
+    {
+        return $this->container['note_safe_html'];
+    }
+
+    /**
+     * Sets note_safe_html
+     *
+     * @param string $note_safe_html note_safe_html
+     *
+     * @return $this
+     */
+    public function setNoteSafeHtml($note_safe_html)
+    {
+        $this->container['note_safe_html'] = $note_safe_html;
+
+        return $this;
+    }
+
+    /**
+     * Gets agent
+     *
+     * @return string
+     */
+    public function getAgent()
+    {
+        return $this->container['agent'];
+    }
+
+    /**
+     * Sets agent
+     *
+     * @param string $agent agent
+     *
+     * @return $this
+     */
+    public function setAgent($agent)
+    {
+        $this->container['agent'] = $agent;
+
+        return $this;
+    }
 
     /**
      * Gets pk
@@ -306,6 +588,174 @@ class BookingResponseObject implements ModelInterface, ArrayAccess
     public function setStatus($status)
     {
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_id
+     *
+     * @return string
+     */
+    public function getExternalId()
+    {
+        return $this->container['external_id'];
+    }
+
+    /**
+     * Sets external_id
+     *
+     * @param string $external_id external_id
+     *
+     * @return $this
+     */
+    public function setExternalId($external_id)
+    {
+        $this->container['external_id'] = $external_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets confirmation_url
+     *
+     * @return string
+     */
+    public function getConfirmationUrl()
+    {
+        return $this->container['confirmation_url'];
+    }
+
+    /**
+     * Sets confirmation_url
+     *
+     * @param string $confirmation_url confirmation_url
+     *
+     * @return $this
+     */
+    public function setConfirmationUrl($confirmation_url)
+    {
+        $this->container['confirmation_url'] = $confirmation_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets dashboard_url
+     *
+     * @return string
+     */
+    public function getDashboardUrl()
+    {
+        return $this->container['dashboard_url'];
+    }
+
+    /**
+     * Sets dashboard_url
+     *
+     * @param string $dashboard_url dashboard_url
+     *
+     * @return $this
+     */
+    public function setDashboardUrl($dashboard_url)
+    {
+        $this->container['dashboard_url'] = $dashboard_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer_count
+     *
+     * @return int
+     */
+    public function getCustomerCount()
+    {
+        return $this->container['customer_count'];
+    }
+
+    /**
+     * Sets customer_count
+     *
+     * @param int $customer_count customer_count
+     *
+     * @return $this
+     */
+    public function setCustomerCount($customer_count)
+    {
+        $this->container['customer_count'] = $customer_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoice_price_display
+     *
+     * @return string
+     */
+    public function getInvoicePriceDisplay()
+    {
+        return $this->container['invoice_price_display'];
+    }
+
+    /**
+     * Sets invoice_price_display
+     *
+     * @param string $invoice_price_display invoice_price_display
+     *
+     * @return $this
+     */
+    public function setInvoicePriceDisplay($invoice_price_display)
+    {
+        $this->container['invoice_price_display'] = $invoice_price_display;
+
+        return $this;
+    }
+
+    /**
+     * Gets display_id
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->container['display_id'];
+    }
+
+    /**
+     * Sets display_id
+     *
+     * @param string $display_id display_id
+     *
+     * @return $this
+     */
+    public function setDisplayId($display_id)
+    {
+        $this->container['display_id'] = $display_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets pickup
+     *
+     * @return string
+     */
+    public function getPickup()
+    {
+        return $this->container['pickup'];
+    }
+
+    /**
+     * Sets pickup
+     *
+     * @param string $pickup pickup
+     *
+     * @return $this
+     */
+    public function setPickup($pickup)
+    {
+        $this->container['pickup'] = $pickup;
 
         return $this;
     }

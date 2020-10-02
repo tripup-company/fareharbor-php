@@ -76,6 +76,62 @@ class BookingResponseObjectTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "voucher_number"
+     */
+    public function testPropertyVoucherNumber()
+    {
+    }
+
+    /**
+     * Test attribute "rebooked_to"
+     */
+    public function testPropertyRebookedTo()
+    {
+    }
+
+    /**
+     * Test attribute "rebooked_from"
+     */
+    public function testPropertyRebookedFrom()
+    {
+    }
+
+    /**
+     * Test attribute "receipt_subtotal"
+     */
+    public function testPropertyReceiptSubtotal()
+    {
+    }
+
+    /**
+     * Test attribute "receipt_total_display"
+     */
+    public function testPropertyReceiptTotalDisplay()
+    {
+    }
+
+    /**
+     * Test attribute "note"
+     */
+    public function testPropertyNote()
+    {
+    }
+
+    /**
+     * Test attribute "note_safe_html"
+     */
+    public function testPropertyNoteSafeHtml()
+    {
+    }
+
+    /**
+     * Test attribute "agent"
+     */
+    public function testPropertyAgent()
+    {
+    }
+
+    /**
      * Test attribute "pk"
      */
     public function testPropertyPk()
@@ -93,6 +149,55 @@ class BookingResponseObjectTest extends \PHPUnit_Framework_TestCase
      * Test attribute "status"
      */
     public function testPropertyStatus()
+    {
+    }
+
+    /**
+     * Test attribute "external_id"
+     */
+    public function testPropertyExternalId()
+    {
+    }
+
+    /**
+     * Test attribute "confirmation_url"
+     */
+    public function testPropertyConfirmationUrl()
+    {
+    }
+
+    /**
+     * Test attribute "dashboard_url"
+     */
+    public function testPropertyDashboardUrl()
+    {
+    }
+
+    /**
+     * Test attribute "customer_count"
+     */
+    public function testPropertyCustomerCount()
+    {
+    }
+
+    /**
+     * Test attribute "invoice_price_display"
+     */
+    public function testPropertyInvoicePriceDisplay()
+    {
+    }
+
+    /**
+     * Test attribute "display_id"
+     */
+    public function testPropertyDisplayId()
+    {
+    }
+
+    /**
+     * Test attribute "pickup"
+     */
+    public function testPropertyPickup()
     {
     }
 
